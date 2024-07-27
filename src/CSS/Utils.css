@@ -1,0 +1,307 @@
+.extrashadow {
+  -webkit-box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.75);
+
+}
+
+.mediumShadow {
+  -webkit-box-shadow: 0px 0px 10px -1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 10px -1px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 10px -1px rgba(0, 0, 0, 0.75);
+}
+
+.smallShadow {
+
+  -webkit-box-shadow: -1px -1px 11px -3px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px -1px 11px -3px rgba(0, 0, 0, 0.75);
+  box-shadow: -1px -1px 11px -3px rgba(0, 0, 0, 0.75);
+}
+
+.close-btn {
+
+  box-sizing: border-box;
+  width: 4em;
+  height: 4em;
+  border-radius: 4em;
+  border: 2px solid #FE6100;
+  color: transparent;
+  cursor: pointer;
+  transition: all ease 0.3s;
+}
+
+.close-btn:before,
+.close-btn:after {
+  position: absolute;
+  width: 2em;
+  height: 1px;
+  left: 50%;
+  top: 50%;
+  margin-left: -1em;
+  content: "";
+  background: #c2784b;
+  transition: all ease 1s;
+}
+
+.close-btn:before {
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.close-btn:after {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+  border-color: #f26a3d;
+  background: rgba(242, 106, 61, 0.1);
+}
+
+.close-btn:hover:before,
+.close-btn:focus:before,
+.close-btn:hover:after,
+.close-btn:focus:after {
+  background: red;
+}
+
+
+
+.textboxcol {
+
+  border: 1px solid var(--Black-20, rgba(17, 17, 19, 0.20));
+}
+
+
+
+
+
+
+
+
+
+/* scrollbar */
+/* YourDropdownComponent.css */
+
+.dropdown-container {
+  /* Set a fixed height for your dropdown container */
+  height: 15vh;
+  /* Set overflow-y to auto to enable vertical scrolling */
+  overflow-y: auto;
+}
+
+/* Customize the scrollbar */
+.dropdown-container::-webkit-scrollbar {
+  width: 8px;
+  /* Set the width of the scrollbar */
+  border-radius: 3px;
+  height: 5px;
+}
+
+.dropdown-container::-webkit-scrollbar-thumb {
+  height: 5px;
+  background-color: #888;
+  /* Set the color of the scrollbar thumb */
+}
+
+.dropdown-container::-webkit-scrollbar-track {
+  background-color: #888484;
+  /* Set the color of the scrollbar track */
+  border-radius: 6px;
+  /* Set the border radius of the thumb */
+  margin: 3px 0;
+  height: 5px;
+
+}
+
+
+
+/* checkbox */
+
+
+
+.checkbox-wrapper-4 * {
+  box-sizing: border-box;
+}
+
+.checkbox-wrapper-4 .cbx {
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.checkbox-wrapper-4 .cbx:not(:last-child) {
+  margin-right: 6px;
+}
+
+.checkbox-wrapper-4 .cbx:hover {
+  background: rgba(0, 119, 255, 0.06);
+}
+
+.checkbox-wrapper-4 .cbx span {
+  float: left;
+  vertical-align: middle;
+  transform: translate3d(0, 0, 0);
+}
+
+.checkbox-wrapper-4 .cbx span:first-child {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  transform: scale(1);
+  border: 1px solid #cccfdb;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 1px rgba(0, 16, 75, 0.05);
+}
+
+.checkbox-wrapper-4 .cbx span:first-child svg {
+  position: absolute;
+  top: 3px;
+  left: 2px;
+  fill: none;
+  stroke: #fff;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 16px;
+  stroke-dashoffset: 16px;
+  transition: all 0.3s ease;
+  transition-delay: 0.1s;
+  transform: translate3d(0, 0, 0);
+}
+
+.checkbox-wrapper-4 .cbx span:last-child {
+  padding-left: 8px;
+  line-height: 18px;
+}
+
+.checkbox-wrapper-4 .cbx:hover span:first-child {
+  border-color: #07f;
+}
+
+.checkbox-wrapper-4 .inp-cbx {
+  position: absolute;
+  visibility: hidden;
+}
+
+.checkbox-wrapper-4 .inp-cbx:checked+.cbx span:first-child {
+  background: #07f;
+  border-color: #07f;
+  animation: wave-4 0.4s ease;
+}
+
+.checkbox-wrapper-4 .inp-cbx:checked+.cbx span:first-child svg {
+  stroke-dashoffset: 0;
+}
+
+.checkbox-wrapper-4 .inline-svg {
+  position: absolute;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+@media screen and (max-width: 640px) {
+  .checkbox-wrapper-4 .cbx {
+    width: 100%;
+    display: inline-block;
+  }
+}
+
+@-moz-keyframes wave-4 {
+  50% {
+    transform: scale(0.9);
+  }
+}
+
+@-webkit-keyframes wave-4 {
+  50% {
+    transform: scale(0.9);
+  }
+}
+
+@-o-keyframes wave-4 {
+  50% {
+    transform: scale(0.9);
+  }
+}
+
+@keyframes wave-4 {
+  50% {
+    transform: scale(0.9);
+  }
+}
+
+
+
+
+.overflow-x-scroll {
+  overflow-x: auto;
+}
+
+.overflow-x-scroll::-webkit-scrollbar {
+  width: 0 !important;
+  /* Hide scrollbar for Chrome, Safari, and Edge */
+}
+
+/* Optional: Hide scrollbar for Firefox */
+.overflow-x-scroll {
+  scrollbar-width: none;
+}
+
+
+/* in pointDetails.js */
+.hide-scrollbar {
+  overflow-y: auto;
+  height: 100%;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  width: 1px;
+}
+
+.hide-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+
+
+
+.hide-dropdown-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+
+.hide-dropdown-scroll-bar {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+
+
+/* compare dropdown css */
+
+.parent-dropdown{
+  /* padding:2px 1px; */
+  /* border-radius: 10px; */
+  transition: all 1s ease-in-out;
+}
+
+
+.parent-dropdown :hover {
+  background-color: #fb8600a7;
+  color: black;
+
+}

@@ -1,0 +1,50 @@
+.post-heading {
+     font-family: "Poppins";
+}
+.total-font-family {
+    font-family: "Poppins";
+}
+/* .colon-class {
+   font-weight: bold;
+} */
+
+.item-container {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+.text-name {
+   
+    width : 170px;
+    text-align: left;
+}
+.colon-class {
+    margin-left: 15px;
+}
+.post-verification {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.right-side-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+}
+
+@media (max-width: 1050px) {
+    .post-verification  {
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 0px;
+        padding-left: 0px;
+    }
+    .right-side-container {
+        margin-top: 10%;
+    }
+    .post-heading {
+        margin-left: 20%;
+    }
+}

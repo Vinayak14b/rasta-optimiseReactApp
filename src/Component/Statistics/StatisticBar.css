@@ -1,0 +1,45 @@
+.statistic-bar {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 165px; /* Adjust the width as needed */
+    height: 100%;
+    background-color: #f8f9fa; /* Optional: Add a background color */
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for better visibility */
+    padding: 10px; /* Optional: Add some padding */
+    overflow-y: auto; 
+    /* Optional: Add vertical scrolling if content overflows */
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+.stat-image {
+    display: block;
+    height: 50px;
+    width: 50px;
+  }
+  
+.count-overlay {
+    position: absolute;
+    bottom: -8px; /* Adjust as needed */
+    right: -14px; /* Adjust as needed */
+    background-color: rgba(255, 255, 255, 0.8);/* Optional: Add background for better visibility*/
+    color: black; /* Optional: Change text color */
+    padding: 2px 5px; /* Optional: Add some padding */
+    border-radius: 12px; /* Rounded rectangle */
+    border: 1px solid red;
+  }
+  
+
+  .close-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+}

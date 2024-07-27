@@ -1,0 +1,15 @@
+/* Hide the scrollbar */
+#second-sidebar::-webkit-scrollbar, #small-sidebar::-webkit-scrollbar, #filter-component-sidebar::-webkit-scrollbar {
+    width: 0rem; /* Set the width of the scrollbar */
+    height:0rem;
+}
+
+/* Handle */
+#second-sidebar::-webkit-scrollbar-thumb, #small-sidebar::-webkit-scrollbar-thumb, #filter-component-sidebar::-webkit-scrollbar-thumb {
+    background: transparent; /* Set the color of the scrollbar handle */
+}
+
+/* Handle on hover */
+#second-sidebar::-webkit-scrollbar-thumb:hover, #small-sidebar::-webkit-scrollbar-thumb:hover, #filter-component-sidebar::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Set the color of the scrollbar handle on hover */
+}

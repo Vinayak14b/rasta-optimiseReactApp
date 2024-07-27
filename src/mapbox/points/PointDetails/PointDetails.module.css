@@ -1,0 +1,134 @@
+.noDataContainer {
+    height: 90%;
+    font-size: 20px;
+    color: #ff8437;
+    width: 90%;
+}
+
+.parentContainer {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    /* padding: 20px; */
+    padding-top: 10px;
+}
+
+.imageOuterContainer {
+    width: 90%;
+    height: 38vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imageInnerContainer {
+    width: 100%;
+    height: 100%;
+}
+
+.imageBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.pointImg {
+    padding: 4px 4px;
+    border: 2px solid orange;
+    border-radius: 10px;
+    object-fit: contain;
+}
+
+.gridContainerBox {
+    width: 90%;
+}
+
+.gridContainer {
+    width: 100%;
+    height: 60px;
+    justify-content: center;
+    border-bottom: 1px solid #d1d5db;
+    border-top: none;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 45px 1fr 1fr;
+    gap: 0px;
+    grid-row-gap: 0px;
+    grid-template-rows: auto;
+    grid-column-gap: 0px;
+    border-collapse: collapse;
+}
+
+.gridItem {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-right: none; /* Disable vertical border on the right */
+    font-weight: 600;
+    font-family: 'Inter';
+    font-size: 12px;
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.imageContainer {
+    grid-row: span 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: none; /* Disable vertical border on the right */
+}
+
+.iconImage {
+    height: 20px;
+}
+
+.chainageBox {
+    height: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: auto;
+    border-radius: 5px;
+    position: relative;
+    background-color: #FE6100;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.options {
+    width: 90%;
+}
+
+.optionsImgBox > img {
+    margin-left: 5px;
+}
+
+/* PointDetailSingleMap.jsx */
+.topContainer {
+    flex: 1;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.childContainer {
+    width: 100%;
+    height: 100%;
+    /* background: #FFFFFF; */
+    padding: 0.5rem;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: poppins;
+    color: white;
+}

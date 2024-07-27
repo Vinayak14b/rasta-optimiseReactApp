@@ -1,0 +1,25 @@
+.profile-container {
+    font-family: "Poppins";
+    width: 100%;
+    padding-left: 150px;
+}
+.profile-sub-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.profile-left-container {
+    width: 50%;
+}
+.profile-right-container {
+    width: 50%;
+}
+@media (max-width : 1000px) {
+    .profile-sub-container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    } 
+    
+}

@@ -1,0 +1,90 @@
+.change-password-heading {
+  /* width: 397px; */
+  /* height: 41px; */
+  color: #000;
+  text-align: center;
+  font-family: "Poppins";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: capitalize;
+  margin: 5px 0 20px 0;
+}
+.input-field {
+  border-radius: 10px;
+  border: 1px solid #fe6100;
+  outline: none;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-family: Poppins;
+}
+.enter-your-email {
+  width: 350px;
+  color: #75767a;
+
+  text-align: center;
+  font-family: Arial;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  margin-top: 20px;
+}
+.submit-button {
+  width: 150px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #fe6100;
+  color: #fff;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.close-button1 {
+  width: 150px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #fe6100;
+  border-radius: 10px;
+  background: #d9d9d9;
+  color: #f00;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.24px;
+  margin-right: 20px;
+}
+.input-password {
+  border-radius: 10px;
+  border: 1px solid #fe6100;
+  outline: none;
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-family: Poppins;
+}
+.label-new-password {
+  font-size: 12px;
+  margin-left: 55px;
+  margin-bottom: 5px;
+}
+.new-password {
+  outline: none;
+  width: 250px;
+}
+.input-with-icon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.password-show-icon {
+  cursor: pointer;
+}

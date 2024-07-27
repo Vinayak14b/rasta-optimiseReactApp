@@ -1,0 +1,123 @@
+#detailedReport {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+
+    /* Variables */
+    --upperSectionHeight: max(40vh, 20rem);
+    --lowerSectionHeight: max(40vh, 20rem);
+    --searchBoxHeight: 3.5rem;
+}
+
+#detailedReport .upperSection {
+    min-height: var(--upperSectionHeight);
+}
+
+#detailedReport .lowerSection {
+    min-height: var(--lowerSectionHeight);
+}
+
+#detailedReport .detailedReportBox1 {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 25%;
+    align-items: center;
+}
+
+#detailedReport .leftBox1 {
+    flex: 1;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    margin: 0.5rem 0;
+    overflow-y: auto;
+    width: 100%;
+}
+
+#detailedReport .searchBarBox {
+    border: 1px solid #dae2ed;
+    display: flex;
+    position: relative;
+    padding-right: 0.2rem;
+    align-items: center;
+    border-radius: 5px;
+    height: var(--searchBoxHeight);
+}
+
+#detailedReport .reportSearchBarInput {
+    flex: 1;
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    outline: none;
+}
+
+#detailedReport .searchBarIcon {
+    margin: 0 0.5rem 0 0.2rem;
+    display: inline-block;
+    z-index: 10;
+    height: 30px;
+    position: relative;
+    left: 6px;
+}
+
+#detailedReport .searchBarList {
+    position: absolute;
+    z-index: 10;
+    margin-top: calc(var(--searchBoxHeight) + 0.5rem);
+    border-radius: 5px;
+    height: 40vh;
+    overflow-y: auto;
+    background: #f6f6f6;
+}
+
+#detailedReport .searchBarIcon>img {
+    height: 100%;
+}
+
+/* Charts */
+#detailedReport .defectsChart {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+    width: 90%;
+}
+
+
+#detailedReport .pieChartTitle, #detailedReport .barChartTitle {
+    font-size: 1.2rem; 
+}
+
+#detailedReport #pieChart, #detailedReport #barChart {
+    flex: 1;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* DetailedReportBox2 */
+#detailedReport .detailedReportBox2 {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    height: 100%;
+    padding: 0 1.5rem;
+}
+
+#detailedReport .assetsChart {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+}

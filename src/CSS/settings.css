@@ -1,0 +1,61 @@
+.change-password {
+    color: #FE6100;
+    cursor: pointer;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.24px;
+
+}
+.change-password:hover{
+    color: #75767A;
+}
+.signout {
+    border-radius: 10px;
+    color: #FFF;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.close {
+    color: #F00;
+
+text-align: center;
+font-family: Poppins;
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+letter-spacing: -0.24px;
+border-radius: 10px;
+}
+.settings-heading {
+color: #000;
+text-align: center;
+font-family: Poppins;
+font-size: 24px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+text-transform: capitalize;
+}
+.settings-content {
+color: #86878B;
+text-align: center;
+font-family: Poppins;
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+margin-top: 10px;
+}

@@ -1,0 +1,27 @@
+.utility-dashboard-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10%;
+    margin-bottom: 2%;
+    width: 90%;
+}
+.filter-button-container {
+    padding-left: 100px;
+}
+
+@media (max-width: 800px) {
+    .utility-dashboard-container {
+        
+        width: 800px;
+    }
+    .filter-button-container {
+        
+        padding-left: 40px;
+    }
+    .dashboard-heading {
+        width: 500px;
+        font-size: 30px;
+        padding-left: 150px;
+    }
+}

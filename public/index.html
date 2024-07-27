@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Create a React web app that uses Mapbox GL JS to render a map" />
+  <title>Rasta.ai</title>
+
+  <!-- fav icon -->
+
+<link rel="icon" type="image/ico" href="./favicon.ico" />
+
+  <!-- <link rel="icon" href="icons/nav_logo.png" /> -->
+
+  <!-- fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+
+
+
+
+  
+
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js'></script>
+  <script
+    src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.1/mapbox-gl-directions.js"></script>
+  <link rel="stylesheet"
+    href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.1/mapbox-gl-directions.css"
+    type="text/css" />
+  <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.4.0/mapbox-gl-compare.js"></script>
+
+
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css' rel='stylesheet' />
+  <link rel="stylesheet"
+    href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.4.0/mapbox-gl-compare.css" type="text/css">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <style>
+    /* Override styles here */
+    .mapboxgl-ctrl-group button {
+      background-color: #fff;
+    }
+
+    .mapboxgl-ctrl-group {
+      background: #ffffff;
+      border-radius: 50px;
+    }
+
+    .mapboxgl-export-list {
+      display: none;
+      background-color: rgb(255, 255, 255);
+    }
+
+    .mapboxgl-ctrl-group button:first-child {
+      /* border-radius: 50px; */
+    }
+
+    .mapboxgl-ctrl-group button {
+      background-color: transparent;
+      /* border-radius: 50px; */
+      /* box-sizing: border-box; */
+      cursor: pointer;
+      display: flex;
+      height: 40px;
+      outline: none;
+      overflow: hidden;
+      padding: 0;
+      width: 40px;
+    }
+
+    .mapboxgl-export-control {
+      background: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' version='1.0' width='128.000000pt' height='128.000000pt' viewBox='0 0 128.000000 128.000000' preserveAspectRatio='xMidYMid meet'><g transform='translate(0.000000,128.000000) scale(0.100000,-0.100000)' fill='%23000000' stroke='none'><path d='M392 888 c-7 -7 -12 -27 -12 -45 0 -26 4 -33 19 -33 13 0 21 8 23 23 2 14 11 23 26 25 14 2 22 10 22 23 0 15 -7 19 -33 19 -18 0 -38 -5 -45 -12z'/><path d='M525 890 c-12 -19 10 -32 51 -28 27 2 39 8 39 18 0 19 -79 27 -90 10z'/><path d='M810 881 c0 -13 8 -21 23 -23 14 -2 23 -11 25 -25 2 -15 10 -23 23 -23 15 0 19 7 19 33 0 42 -15 57 -57 57 -26 0 -33 -4 -33 -19z'/><path d='M665 890 c-12 -19 10 -32 51 -28 27 2 39 8 39 18 0 19 -79 27 -90 10z'/><path d='M384 747 c-10 -28 0 -82 16 -82 11 0 15 12 15 44 0 44 -19 68 -31 38z'/><path d='M864 747 c-10 -28 0 -82 16 -82 11 0 15 12 15 44 0 44 -19 68 -31 38z'/><path d='M625 640 c-11 -12 -31 -20 -49 -20 -54 0 -57 -6 -54 -126 l3 -109 188 -3 188 -2 -3 117 -3 118 -43 3 c-29 2 -46 9 -55 23 -10 16 -23 19 -83 19 -58 0 -74 -4 -89 -20z m150 -74 c65 -65 22 -166 -70 -166 -41 0 -85 50 -85 97 0 21 6 45 13 54 35 45 105 52 142 15z'/><path d='M670 519 c-17 -31 12 -71 48 -67 33 4 53 48 32 72 -19 23 -67 20 -80 -5z'/><path d='M384 607 c-10 -28 0 -82 16 -82 11 0 15 12 15 44 0 44 -19 68 -31 38z'/><path d='M380 437 c0 -18 5 -38 12 -45 7 -7 27 -12 45 -12 26 0 33 4 33 19 0 13 -8 21 -22 23 -15 2 -24 11 -26 26 -2 14 -10 22 -23 22 -15 0 -19 -7 -19 -33z'/></g></svg>")
+    }
+
+    .mapboxgl-export-control {
+      background: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' version='1.0' width='128.000000pt' height='128.000000pt' viewBox='0 0 128.000000 128.000000' preserveAspectRatio='xMidYMid meet'><g transform='translate(0.000000,128.000000) scale(0.100000,-0.100000)' fill='%23000000' stroke='none'><path d='M392 888 c-7 -7 -12 -27 -12 -45 0 -26 4 -33 19 -33 13 0 21 8 23 23 2 14 11 23 26 25 14 2 22 10 22 23 0 15 -7 19 -33 19 -18 0 -38 -5 -45 -12z'/><path d='M525 890 c-12 -19 10 -32 51 -28 27 2 39 8 39 18 0 19 -79 27 -90 10z'/><path d='M810 881 c0 -13 8 -21 23 -23 14 -2 23 -11 25 -25 2 -15 10 -23 23 -23 15 0 19 7 19 33 0 42 -15 57 -57 57 -26 0 -33 -4 -33 -19z'/><path d='M665 890 c-12 -19 10 -32 51 -28 27 2 39 8 39 18 0 19 -79 27 -90 10z'/><path d='M384 747 c-10 -28 0 -82 16 -82 11 0 15 12 15 44 0 44 -19 68 -31 38z'/><path d='M864 747 c-10 -28 0 -82 16 -82 11 0 15 12 15 44 0 44 -19 68 -31 38z'/><path d='M625 640 c-11 -12 -31 -20 -49 -20 -54 0 -57 -6 -54 -126 l3 -109 188 -3 188 -2 -3 117 -3 118 -43 3 c-29 2 -46 9 -55 23 -10 16 -23 19 -83 19 -58 0 -74 -4 -89 -20z m150 -74 c65 -65 22 -166 -70 -166 -41 0 -85 50 -85 97 0 21 6 45 13 54 35 45 105 52 142 15z'/><path d='M670 519 c-17 -31 12 -71 48 -67 33 4 53 48 32 72 -19 23 -67 20 -80 -5z'/><path d='M384 607 c-10 -28 0 -82 16 -82 11 0 15 12 15 44 0 44 -19 68 -31 38z'/><path d='M380 437 c0 -18 5 -38 12 -45 7 -7 27 -12 45 -12 26 0 33 4 33 19 0 13 -8 21 -22 23 -15 2 -24 11 -26 26 -2 14 -10 22 -23 22 -15 0 -19 -7 -19 -33z'/></g></svg>")
+    }
+
+    .mapbox-gl-draw_polygon {
+      background-image: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' version='1.0' width='128.000000pt' height='128.000000pt' viewBox='0 0 128.000000 128.000000' preserveAspectRatio='xMidYMid meet'><g transform='translate(0.000000,128.000000) scale(0.100000,-0.100000)' fill='%23000000' stroke='none'><path d='M377 903 c-14 -13 -7 -74 8 -79 23 -9 22 -359 -1 -368 -11 -4 -14 -17 -12 -43 3 -35 6 -38 38 -41 24 -3 38 2 47 14 19 26 353 78 368 57 7 -9 24 -13 45 -11 32 3 35 6 38 41 2 26 -1 39 -12 43 -24 9 -24 239 0 248 11 4 14 17 12 43 -3 35 -6 38 -38 41 -21 2 -38 -2 -45 -11 -9 -12 -34 -10 -184 13 -132 20 -176 31 -183 43 -9 17 -68 24 -81 10z m53 -38 c0 -8 -7 -15 -15 -15 -8 0 -15 7 -15 15 0 8 7 15 15 15 8 0 15 -7 15 -15z m351 -65 c9 0 28 -11 43 -25 25 -23 26 -28 26 -135 0 -151 5 -147 -215 -180 -221 -33 -205 -47 -205 180 0 226 -13 213 185 183 83 -12 157 -23 166 -23z m99 5 c0 -8 -7 -15 -15 -15 -8 0 -15 7 -15 15 0 8 7 15 15 15 8 0 15 -7 15 -15z m0 -330 c0 -8 -7 -15 -15 -15 -8 0 -15 7 -15 15 0 8 7 15 15 15 8 0 15 -7 15 -15z m-450 -60 c0 -8 -7 -15 -15 -15 -8 0 -15 7 -15 15 0 8 7 15 15 15 8 0 15 -7 15 -15z'/></g></svg>");
+      background-size: 100%;
+    }
+
+    .mapboxgl-ctrl-top-right {
+      pointer-events: none;
+      position: absolute;
+      z-index: 0;
+      margin-right: 93.2%;
+    }
+  </style>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+</body>
+
+</html>
