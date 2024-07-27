@@ -3,7 +3,7 @@ name: CICD
 on:
   push:
     branches:
-      - deploy-to-ec2
+      - main
 
 jobs:
   build:
@@ -11,26 +11,21 @@ jobs:
     steps:
       - name: Checkout Source
         uses: actions/checkout@v3
-
       - name: Login to Docker Hub
-        run: echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
-
+        run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
       - name: Build Docker Image
         run: |
           DOCKER_BUILDKIT=1 docker build -t vinayakb142002/my-vite-app:03 .
+      - name: Publish image to docker hub
+        run: docker push vinayakb142002/my-vite-app:03  
 
-      - name: Publish Image to Docker Hub
-        run: docker push vinayakb142002/my-vite-app:03
-
-  deploy:
+  deploy: 
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: aws-ec2   
     steps:
-      - name: Pull Image from Docker Hub
-        run: docker pull vinayakb142002/my-vite-app:03
-
+      - name: Pull image from docker hub
+        run: docker pull vinayakb142002/my-vite-app:03 
       - name: Delete Old Container
-        run: docker rm -f reactContainer || true
-
-      - name: Run Docker Container
-        run: docker run -d -p 80:80 --name reactContainer vinayakb142002/my-vite-app:03
+        run: docker rm -f reactContainer
+      - name: Run docker container
+        run: docker run -d -p 80:80 --name reactContainer vinayakb142002/my-vite-app:03   
