@@ -1,26 +1,27 @@
-# Use an official Node.js runtime as a parent image
-FROM node:16-alpine
+# Step 1: Build the Vite React App
+FROM node:16-alpine AS build
 
-# Set the working directory
 WORKDIR /app
-
-# Copy package.json and package-lock.json
-COPY package*.json ./
-
-# Install dependencies
+COPY package.json package-lock.json ./
 RUN npm install
-
-# Copy the rest of the application
 COPY . .
 
 # Increase the memory limit
-ENV NODE_OPTIONS=--max-old-space-size=4096
+ENV NODE_OPTIONS="--max-old-space-size=4096"
 
-# Build the application
 RUN npm run build
 
-# Expose the port the app runs on
-EXPOSE 5173
+# Step 2: Serve With Nginx
+FROM nginx:1.23-alpine
 
-# Define the command to run the application
-CMD ["npm", "start"]
+# Remove the default Nginx content
+RUN rm -rf /usr/share/nginx/html/*
+
+# Copy the build artifacts from the build stage
+COPY --from=build /app/dist /usr/share/nginx/html
+
+# Expose port 80 for Nginx
+EXPOSE 80
+
+# Start Nginx in the foreground
+ENTRYPOINT ["nginx", "-g", "daemon off;"]

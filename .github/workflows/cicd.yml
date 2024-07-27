@@ -1,0 +1,63 @@
+name: CI/CD
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Source
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build Docker Image
+        run: docker build -t vinayakb142002/my-vite-app:03 .
+
+      - name: Login to Docker Hub
+        run: echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
+
+      - name: Publish Image to Docker Hub
+        run: docker push vinayakb142002/my-vite-app:03
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Source
+        uses: actions/checkout@v3
+
+      - name: SSH to EC2 and Deploy
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
+          HOST: ${{ secrets.EC2_HOST }}
+          USERNAME: ${{ secrets.EC2_USERNAME }}
+        run: |
+          # Install SSH client
+          sudo apt-get update
+          sudo apt-get install -y openssh-client
+
+          # Set up SSH key
+          echo "$SSH_PRIVATE_KEY" > private_key.pem
+          chmod 600 private_key.pem
+
+          # Deploy using SSH
+          ssh -o StrictHostKeyChecking=no -i private_key.pem $USERNAME@$HOST << 'EOF'
+            # Pull the latest Docker image
+            docker pull vinayakb142002/my-vite-app:03
+
+            # Stop and remove old container if it exists
+            docker rm -f reactContainer || true
+
+            # Run the new container
+            docker run -d -p 80:80 --name reactContainer vinayakb142002/my-vite-app:03
+          EOF
